@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salary Converter</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div>
+      <h1>Salary Converter</h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle">&#9728; Day</button>
+  </div>
+
+  <div class="card work-card">
+    <div class="work-row">
+      <div class="field">
+        <label for="hoursPerWeek">Hours / week</label>
+        <input type="number" id="hoursPerWeek" value="40" min="1" step="1" inputmode="decimal">
+      </div>
+      <div class="field">
+        <label for="daysPerWeek">Days / week</label>
+        <input type="number" id="daysPerWeek" value="5" min="1" step="1" inputmode="decimal">
+      </div>
+    </div>
+  </div>
+
+  <div class="cards-container" id="cardsContainer">
+    <div class="card salary-card">
+      <div class="card-top">
+        <div class="currency-selector">
+          <button type="button" class="currency-trigger" aria-haspopup="listbox" aria-expanded="false">
+            <span class="currency-code">USD</span>
+            <span class="currency-arrow" aria-hidden="true">&#9650;</span>
+          </button>
+          <ul class="currency-list" role="listbox">
+            <li role="option" data-code="USD">USD</li>
+            <li role="option" data-code="EUR">EUR</li>
+            <li role="option" data-code="GBP">GBP</li>
+            <li role="option" data-code="BRL">BRL</li>
+            <li role="option" data-code="JPY">JPY</li>
+            <li role="option" data-code="CAD">CAD</li>
+            <li role="option" data-code="AUD">AUD</li>
+          </ul>
+        </div>
+        <button type="button" class="add-card" title="Add currency" aria-label="Add currency">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+        </button>
+      </div>
+      <div class="salary-grid">
+        <div class="field">
+          <label for="annual">Annual</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="annual" data-period="annual" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+        <div class="field">
+          <label for="hourly">Hourly</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="hourly" data-period="hourly" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+        <div class="field">
+          <label for="monthly">Monthly</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="monthly" data-period="monthly" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+        <div class="field">
+          <label for="biweekly">Biweekly</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="biweekly" data-period="biweekly" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+        <div class="field">
+          <label for="weekly">Weekly</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="weekly" data-period="weekly" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+        <div class="field">
+          <label for="daily">Daily</label>
+          <div class="input-wrap"><span class="prefix">$</span><input type="number" id="daily" data-period="daily" min="0" step="0.01" inputmode="decimal" placeholder="0.00"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="rates-note" id="ratesNote">Loading exchange rates&hellip;</p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
